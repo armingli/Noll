@@ -6,7 +6,9 @@
       <title>
         <![CDATA[{{ $descussoin.Title }}]]>
       </title>
-      <link>{{ url $descussoin }}</link>
+      <pubDate>{{ $descussoin.CreatedAt }}</pubDate>
+      <updated>{{ $descussoin.UpdatedAt }}</updated>
+      <link>https://blog.metaprogramming.space{{ url $descussoin }}</link>
       <description>
         <![CDATA[{{ $descussoin.Body }}]]>
       </description>
