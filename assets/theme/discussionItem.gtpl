@@ -1,7 +1,7 @@
 {{define "DiscussionItemTemplate"}}
 <li style="display: block; margin: 5px 0;">
   <a href="{{ url . }}">
-    {{ .Title }}({{ .CreatedAt.Format "02/01/2006" }})
+    {{ .Title }} ({{ .CreatedAt.Format "2006-01-02" }})
     <ul style="display: contents; font-size: 1rem;">
       <li class="li"><span class="COMMENT">
           {{ .Comments.TotalCount }}</span></li>
