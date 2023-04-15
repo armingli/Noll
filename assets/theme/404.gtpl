@@ -4,15 +4,21 @@
 <head>
   {{ template "HeadTemplate" .Viewer }}
   
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <title>404 Not Found —— {{ .Viewer.ShowName }}'s Blog </title>
 </head>
 
-<body>
+<body style="margin: auto">
   {{ template "HeaderTemplate" . }}
   <div class="clearfix">
-  
-  <script type="text/javascript" src="//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js" charset="utf-8" homePageUrl="about.html" homePageName="返回"></script>
+  <p style="display:none">你访问的页面找不回来了，但是我们可以一起寻找失踪宝贝</p>
+<p style="display:none">
+相关组织：
+<a href="https://e.t.qq.com/Tencent-Volunteers" title="腾讯志愿者">腾讯志愿者</a>、
+<a href="https://bbs.baobeihuijia.com/" title="宝贝回家">宝贝回家</a>
+</p>
+<script type="text/javascript" src="https://qzonestyle.gtimg.cn/qzone_v6/lostchild/search_children.js"></script>
+
   </div>
   
   {{ template "footerTemplate" .Viewer }}
