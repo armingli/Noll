@@ -186,6 +186,9 @@ func render(site *RenderSite, data *GithubData, themeTmplDir string, debug bool,
 				return UnixPath(filepath.Join(site.BaseURL, "category", fmt.Sprintf("%v.html", category.Slug())))
 			}
 			if discussion, ok := obj.(*Discussion); ok {
+				for discussion.Category.Name == "Draft" {
+					return ""
+				}
 				return UnixPath(filepath.Join(site.BaseURL, "post", fmt.Sprintf("%v.html", discussion.Number)))
 			}
 			return site.BaseURL
