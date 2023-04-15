@@ -5,6 +5,7 @@
 
 <head>
   {{ template "HeadTemplate" .Viewer }}
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
   <title> {{ .Data.Title }}</title>
   <link rel="stylesheet" href="https://sindresorhus.com/github-markdown-css/github-markdown.css">
   <style>
@@ -124,7 +125,7 @@
     el:        '#Comments',              // 绑定元素的 Selector
     pageKey:   '',                // 固定链接 (留空自动获取)
     pageTitle: '', // 页面标题 (留空自动获取)
-    server:    'http://artalk.metaprogramming.space',  // 后端地址
+    server:    'https://artalk.metaprogramming.space',  // 后端地址
     site:      "{{ .Viewer.ShowName }}'s Blog",           // 你的站点名
   })
 </script>
