@@ -121,7 +121,7 @@ func getRepository(owner, name, token string) (*GithubData, error) {
 func getDiscussionPage(owner, name, token string, afterCursor string) (*DiscussionPage, error) {
 	queryFormat := `{
 		repository(owner: "%v", name: "%v") {
-			discussions(first: 10, %v) {
+			discussions(first: 10, %v, orderBy:{field: CREATED_AT, direction: DESC}) {
 				totalCount
 				nodes {
 					number
