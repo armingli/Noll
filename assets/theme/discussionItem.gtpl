@@ -3,7 +3,7 @@
   <a href="{{ url . }}">
     {{ .Title }} ({{ .CreatedAt.Format "2006-01-02" }})
     <ul style="display: contents; font-size: 1rem;">
-      <li class="li"><span class="COMMENT">
+      <li class="li"><span class="WRITING">
           {{ .Comments.TotalCount }}</span></li>
       {{ if .ReactionGroups }}
       {{ range $reaction := .ReactionGroups }}

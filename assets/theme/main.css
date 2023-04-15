@@ -117,6 +117,10 @@ a.text[href]:active {
   content: "🙂";
 }
 
+.WRITING::before {
+    content: "✍️";
+}
+
 /* .THUMBS_UP,
 .THUMBS_DOWN,
 .LAUGH,

@@ -58,6 +58,9 @@
 
     .comment {
       width: 100%;
+      border: dashed 0.5px #667c87;
+      border-radius: 20px;
+      margin: 20px auto;
     }
 
     .comment-input {
@@ -82,15 +85,11 @@
     <div style="font-size: 1rem; align-items: center;" class="column">
       <img src="{{ .Viewer.AvatarURL }}" style="width: 1.4rem; height: 1.4rem;" />
       <a href='{{ url "/" }}'>{{ .Viewer.ShowName }}</a>
-      发布在<a href="{{ url .Data.Category}}">{{ .Data.Category.Name }}</a>
-      于<time style="margin-left: 5px;" class="flex-fill" title="{{ .Data.CreatedAt }}">
-        {{ .Data.CreatedAt.Format "01-02-2006" }}</time>
-      {{ if .Data.UpvoteCount }}
-      <a style="margin-left: -10px" href="{{ $githubURL }}">
-        <span>{{ template "VoteSVGTemplate" 22 }}{{ .Data.UpvoteCount }}</span></a>
-      {{ end }}
+      于<time title="{{ .Data.CreatedAt }}">
+        {{ .Data.CreatedAt.Format "2006-01-02" }}</time>
+      发布在<a style="margin-left: 5px;" class="flex-fill" href="{{ url .Data.Category}}">{{ .Data.Category.Name }}</a>
+      
     </div>
-    <!-- <div id="container" style="width: 100%; height: 500px; position: relative;"></div> -->
   </div>
   <article class="markdown-body" style="font-size: 1.2rem;">
     {{ .Data.BodyHTML }}
@@ -103,25 +102,6 @@
     {{ end }}
     {{ end }}
   </ul>
-  <ul class="ul" style="text-align: center; margin: 30px auto;">
-    <li class="li reaction">
-      <a href="{{ $githubURL }}"><span class="SMILING"></span></a>
-    </li>
-    {{ range $reaction := .Data.ReactionGroups }}
-    {{ if $reaction.Reactors.TotalCount }}
-    <li class="li reaction">
-      <a href="{{ $githubURL }}"><span class="{{ $reaction.Content }}">
-          {{ $reaction.Reactors.TotalCount }}</span></a>
-    </li>
-    {{ end }}
-    {{ end }}
-  </ul>
-  {{ template "TopComponentTemplate" }}
-  <div style="display: flex; align-items: center; margin: 30px auto;">
-    <div style="flex: 1; height: 1px; background-color: #ddd;"></div>
-    <span class="COMMENT" style="margin: 0 12px"></span>
-    <div style="flex: 1; height: 1px; background-color: #ddd;"></div>
-  </div>
   {{ if .Data.Comments }}
   <ul class="ul" style="margin: 30px auto; font-size: 1rem;">
     {{ range $comment := .Data.Comments.Nodes }}
@@ -131,8 +111,12 @@
     {{ end }}
   </ul>
   {{ end }}
-  <!-- <a href="{{ $githubURL }}#issue-comment-box" class="comment-input">前往 GitHub Discussion 评论</a> -->
 
+<div style="display: flex; align-items: center; margin: 30px auto;">
+    <div style="flex: 1; height: 1px; background-color: #ddd;"></div>
+    <span class="COMMENT" style="margin: 0 12px"></span>
+    <div style="flex: 1; height: 1px; background-color: #ddd;"></div>
+</div>
 <!-- Artalk -->
 <div id="Comments"></div>
 <script>
