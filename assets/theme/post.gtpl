@@ -68,6 +68,11 @@
       padding: 30px 0;
     }
   </style>
+
+    <!-- CSS -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/artalk/2.5.4/Artalk.css" rel="stylesheet">
+    <!-- JS -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/artalk/2.5.4/Artalk.js"></script>
 </head>
 
 <body>
@@ -126,8 +131,20 @@
     {{ end }}
   </ul>
   {{ end }}
-  <a href="{{ $githubURL }}#issue-comment-box" class="comment-input">前往 GitHub Discussion 评论</a>
+  <!-- <a href="{{ $githubURL }}#issue-comment-box" class="comment-input">前往 GitHub Discussion 评论</a> -->
+
+<!-- Artalk -->
+<div id="Comments"></div>
+<script>
+  Artalk.init({
+    el:        '#Comments',              // 绑定元素的 Selector
+    pageKey:   '',                // 固定链接 (留空自动获取)
+    pageTitle: '', // 页面标题 (留空自动获取)
+    server:    'http://artalk.metaprogramming.space',  // 后端地址
+    site:      "{{ .Viewer.ShowName }}'s Blog",           // 你的站点名
+  })
+</script>
   {{ template "footerTemplate" .Viewer }}
 </body>
 
-</html>
+</html> 

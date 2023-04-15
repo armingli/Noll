@@ -9,7 +9,7 @@
       <a class="text" href="{{ .Author.GitHubURL }}">{{ .Author.ShowName }}</a>
       <time style="margin: 0 10px" title="{{ .UpdatedAt }}"> {{ .UpdatedAt.Format "01-02" }} </time>
       <div style="flex: 1;"></div>
-      <a class="text" href="{{ .GitHubURL }}">回复</a>
+      <!-- <a class="text" href="{{ .GitHubURL }}">回复</a> -->
     </div>
     <div class="markdown-body" style="margin: 12px 0;">{{ .BodyHTML }}</div>
     <ul class="ul column">
