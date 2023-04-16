@@ -72,11 +72,7 @@
       padding: 30px 0;
     }
   </style>
-
-    <!-- CSS -->
-    <link href="https://cdn.bootcdn.net/ajax/libs/artalk/2.5.4/Artalk.css" rel="stylesheet">
-    <!-- JS -->
-    <script src="https://cdn.bootcdn.net/ajax/libs/artalk/2.5.4/Artalk.js"></script>
+ <link id="giscus-css" rel="stylesheet" href="https://giscus.app/default.css">
 </head>
 
 <body>
@@ -118,17 +114,25 @@
     <span class="COMMENT" style="margin: 0 12px"></span>
     <div style="flex: 1; height: 1px; background-color: #ddd;"></div>
 </div>
-<!-- Artalk -->
-<div id="Comments"></div>
-<script>
-  Artalk.init({
-    el:        '#Comments',              // 绑定元素的 Selector
-    pageKey:   '',                // 固定链接 (留空自动获取)
-    pageTitle: '', // 页面标题 (留空自动获取)
-    server:    'https://artalk.metaprogramming.space',  // 后端地址
-    site:      "{{ .Viewer.ShowName }}'s Blog",           // 你的站点名
-  })
-</script>
+
+<div class="comments giscus-container">
+<script src="https://giscus.app/client.js"
+        data-repo="armingli/blog-comment"
+        data-repo-id="R_kgDOJXgsWQ"
+        data-category="Comments"
+        data-category-id="DIC_kwDOJXgsWc4CV0WY"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script><div class="giscus"><iframe class="giscus-frame"></iframe></div></div>
+
   {{ template "footerTemplate" .Viewer }}
 </body>
 

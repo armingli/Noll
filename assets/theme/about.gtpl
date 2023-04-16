@@ -4,6 +4,7 @@
 <head>
   {{ template "HeadTemplate" .Viewer }}
   <title>Aoubt —— {{ .Viewer.ShowName }}'s Blog </title>
+  <link id="giscus-css" rel="stylesheet" href="https://giscus.app/default.css">
 </head>
 
 <body>
@@ -27,7 +28,25 @@
   <p>🕊️ <a style="padding: 0px;" href="https://twitter.com/{{ .Viewer.Twitter }}">
       https://twitter.com/{{ .Viewer.Twitter }}</a></p>
   {{ end }}
-  <!-- style="white-space: pre-wrap;" -->
+    
+<div class="comments giscus-container">
+<script src="https://giscus.app/client.js"
+        data-repo="armingli/blog-comment"
+        data-repo-id="R_kgDOJXgsWQ"
+        data-category="Comments"
+        data-category-id="DIC_kwDOJXgsWc4CV0WY"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script><div class="giscus"><iframe class="giscus-frame"></iframe></div></div>
+
   {{ template "footerTemplate" .Viewer }}
 </body>
 
