@@ -13,7 +13,10 @@ func getGemoji(gemoji string) string {
 	gEmojiRegex := `<g-emoji .*>(.*)</g-emoji>`
 	regex := regexp.MustCompile(gEmojiRegex)
 	result := regex.FindStringSubmatch(gemoji)
-	return result[0]
+	if len(result) > 0 {
+		return result[0]
+	}
+	return ""
 }
 
 func getRepository(owner, name, token string) (*GithubData, error) {
